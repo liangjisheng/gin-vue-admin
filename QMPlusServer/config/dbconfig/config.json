@@ -1,0 +1,9 @@
+{
+    "admin": {
+      "username": "root",
+      "password": "ljs199711",
+      "path": "127.0.0.1:3306",
+      "dbname": "study",
+      "config": "charset=utf8&parseTime=True&loc=Local"
+    }
+  }
