@@ -1,0 +1,1141 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample Server pets",
+        "title": "Swagger Example API",
+        "contact": {},
+        "license": {},
+        "version": "0.0.1"
+    },
+    "basePath": "/",
+    "paths": {
+        "/api/createApi": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "API"
+                ],
+                "summary": "创建基础api",
+                "parameters": [
+                    {
+                        "description": "创建api",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.CreateAPIParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/deleteApi": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "API"
+                ],
+                "summary": "删除指定api",
+                "parameters": [
+                    {
+                        "description": "删除api",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.API"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/getAllApis": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "API"
+                ],
+                "summary": "获取所有的Api 不分页",
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/getApiById": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "API"
+                ],
+                "summary": "根据id获取api",
+                "parameters": [
+                    {
+                        "description": "分页获取用户列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/modelinterface.PageInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/getApiList": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "API"
+                ],
+                "summary": "分页获取API列表",
+                "parameters": [
+                    {
+                        "description": "分页获取API列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/modelinterface.PageInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/setAuthAndApi": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "API"
+                ],
+                "summary": "创建api和角色关系",
+                "parameters": [
+                    {
+                        "description": "创建api和角色关系",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.AuthAndPathIn"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/updataApi": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "API"
+                ],
+                "summary": "创建基础api",
+                "parameters": [
+                    {
+                        "description": "创建api",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.CreateAPIParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/authority/createAuthority": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "authority"
+                ],
+                "summary": "创建角色",
+                "parameters": [
+                    {
+                        "description": "创建角色",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.CreateAuthorityPatams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/authority/deleteAuthority": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "authority"
+                ],
+                "summary": "删除角色",
+                "parameters": [
+                    {
+                        "description": "删除角色",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.DeleteAuthorityPatams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/authority/getAuthAndAPI": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "authority"
+                ],
+                "summary": "获取本角色所有有权限的apiId",
+                "parameters": [
+                    {
+                        "description": "获取本角色所有有权限的apiId",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.GetAuthorityID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/authority/getAuthorityList": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "authority"
+                ],
+                "summary": "分页获取角色列表",
+                "parameters": [
+                    {
+                        "description": "分页获取用户列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/modelinterface.PageInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/base/login": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Base"
+                ],
+                "summary": "用户登录",
+                "parameters": [
+                    {
+                        "description": "用户登录接口",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.RegistAndLoginStuct"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"登陆成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/base/regist": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Base"
+                ],
+                "summary": "用户注册账号",
+                "parameters": [
+                    {
+                        "description": "用户注册接口",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.RegistAndLoginStuct"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"注册成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/menu/addBaseMenu": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "menu"
+                ],
+                "summary": "新增菜单",
+                "parameters": [
+                    {
+                        "description": "新增菜单",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.BaseMenu"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/menu/addMenuAuthority": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "authorityAndMenu"
+                ],
+                "summary": "获取指定角色menu",
+                "parameters": [
+                    {
+                        "description": "增加menu和角色关联关系",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.AuthorityIDInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/menu/deleteBaseMenu": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "menu"
+                ],
+                "summary": "删除菜单",
+                "parameters": [
+                    {
+                        "description": "删除菜单",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.IDInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/menu/getBaseMenuById": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "menu"
+                ],
+                "summary": "根据id获取菜单",
+                "parameters": [
+                    {
+                        "description": "根据id获取菜单",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.GetByID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/menu/getBaseMenuTree": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "authorityAndMenu"
+                ],
+                "summary": "获取用户动态路由",
+                "parameters": [
+                    {
+                        "description": "可以什么都不填",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.RegistAndLoginStuct"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"返回成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/menu/getMenu": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "authorityAndMenu"
+                ],
+                "summary": "获取用户动态路由",
+                "parameters": [
+                    {
+                        "description": "可以什么都不填",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.RegistAndLoginStuct"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"返回成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/menu/getMenuList": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "menu"
+                ],
+                "summary": "分页获取基础menu列表",
+                "parameters": [
+                    {
+                        "description": "分页获取基础menu列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/modelinterface.PageInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/menu/updataBaseMen": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "menu"
+                ],
+                "summary": "更新菜单",
+                "parameters": [
+                    {
+                        "description": "更新菜单",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.BaseMenu"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/changePassword": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "用户修改密码",
+                "parameters": [
+                    {
+                        "description": "用户修改密码",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.ChangePasswordStruct"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"修改成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/getUserList": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "分页获取用户列表",
+                "parameters": [
+                    {
+                        "description": "分页获取用户列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/modelinterface.PageInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"获取成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/setUserAuthority": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "设置用户权限",
+                "parameters": [
+                    {
+                        "description": "设置用户权限",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.SetUserAuth"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"修改成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/uploadHeaderImg": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "用户上传头像",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "用户上传头像",
+                        "name": "headerImg",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "用户上传头像",
+                        "name": "username",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"success\":true,\"data\":{},\"msg\":\"上传成功\"}",
+                        "schema": {
+                            "$ref": "#/definitions/api.response"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "api.AddMenuAuthorityInfo": {
+            "type": "object",
+            "properties": {
+                "authorityID": {
+                    "type": "string"
+                },
+                "menus": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.BaseMenu"
+                    }
+                }
+            }
+        },
+        "api.AuthAndPathIn": {
+            "type": "object",
+            "properties": {
+                "apiIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "authorityId": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.AuthorityIDInfo": {
+            "type": "object",
+            "properties": {
+                "authorityID": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.ChangePasswordStruct": {
+            "type": "object",
+            "properties": {
+                "newPassword": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.CreateAPIParams": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.CreateAuthorityPatams": {
+            "type": "object",
+            "properties": {
+                "authorityId": {
+                    "type": "string"
+                },
+                "authorityName": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.DeleteAuthorityPatams": {
+            "type": "object",
+            "properties": {
+                "authorityId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api.GetAuthorityID": {
+            "type": "object",
+            "properties": {
+                "authorityId": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.GetByID": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                }
+            }
+        },
+        "api.IDInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                }
+            }
+        },
+        "api.RegistAndLoginStuct": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.SetUserAuth": {
+            "type": "object",
+            "properties": {
+                "authorityId": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.response": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "model.API": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "group": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.BaseMenu": {
+            "type": "object",
+            "properties": {
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.BaseMenu"
+                    }
+                },
+                "component": {
+                    "type": "string"
+                },
+                "hidden": {
+                    "type": "boolean"
+                },
+                "icon": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nickName": {
+                    "type": "string"
+                },
+                "parentId": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "modelinterface.PageInfo": {
+            "type": "object",
+            "properties": {
+                "page": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "x-token",
+            "in": "header"
+        }
+    }
+}
