@@ -33,7 +33,7 @@ type GetAuthorityID struct {
 // @accept application/json
 // @Produce application/json
 // @Param data body api.CreateAuthorityPatams true "创建角色"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /authority/createAuthority [post]
 func CreateAuthority(c *gin.Context) {
 	var auth model.Authority
@@ -57,7 +57,7 @@ func CreateAuthority(c *gin.Context) {
 // @accept application/json
 // @Produce application/json
 // @Param data body api.DeleteAuthorityPatams true "删除角色"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /authority/deleteAuthority [post]
 func DeleteAuthority(c *gin.Context) {
 	var a model.Authority
@@ -77,8 +77,8 @@ func DeleteAuthority(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body modelInterface.PageInfo true "分页获取用户列表"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body modelinterface.PageInfo true "分页获取用户列表"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /authority/getAuthorityList [post]
 func GetAuthorityList(c *gin.Context) {
 	var pageInfo modelinterface.PageInfo
@@ -102,9 +102,9 @@ func GetAuthorityList(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body api.GetAuthorityId true "获取本角色所有有权限的apiId"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
-// @Router /authority/getAuthAndApi [post]
+// @Param data body api.GetAuthorityID true "获取本角色所有有权限的apiId"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
+// @Router /authority/getAuthAndAPI [post]
 func GetAuthAndAPI(c *gin.Context) {
 	var idInfo GetAuthorityID
 	_ = c.BindJSON(&idInfo)

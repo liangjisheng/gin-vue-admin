@@ -21,14 +21,20 @@ type DeleteAPIParams struct {
 	ID uint `json:"id"`
 }
 
+type response struct {
+	Success bool        `json:"success"`
+	Data    interface{} `json:"data"`
+	Msg     string      `json:"msg"`
+}
+
 // CreateAPI ...
 // @Tags API
 // @Summary 创建基础api
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body api.CreateApiParams true "创建api"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body api.CreateAPIParams true "创建api"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/createApi [post]
 func CreateAPI(c *gin.Context) {
 	var api model.API
@@ -47,8 +53,8 @@ func CreateAPI(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body model.Api true "删除api"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body model.API true "删除api"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/deleteApi [post]
 func DeleteAPI(c *gin.Context) {
 	var a model.API
@@ -74,7 +80,7 @@ type AuthAndPathIn struct {
 // @accept application/json
 // @Produce application/json
 // @Param data body api.AuthAndPathIn true "创建api和角色关系"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/setAuthAndApi [post]
 func SetAuthAndAPI(c *gin.Context) {
 	var authAndPathIn AuthAndPathIn
@@ -93,8 +99,8 @@ func SetAuthAndAPI(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body modelInterface.PageInfo true "分页获取API列表"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body modelinterface.PageInfo true "分页获取API列表"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/getApiList [post]
 func GetAPIList(c *gin.Context) {
 	var pageInfo modelinterface.PageInfo
@@ -119,8 +125,8 @@ func GetAPIList(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body modelInterface.PageInfo true "分页获取用户列表"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body modelinterface.PageInfo true "分页获取用户列表"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/getApiById [post]
 func GetAPIByID(c *gin.Context) {
 	var idInfo GetByID
@@ -141,8 +147,8 @@ func GetAPIByID(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body api.CreateApiParams true "创建api"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body api.CreateAPIParams true "创建api"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/updataApi [post]
 func UpdataAPI(c *gin.Context) {
 	var api model.API
@@ -161,7 +167,7 @@ func UpdataAPI(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/getAllApis [post]
 func GetAllAPIs(c *gin.Context) {
 	err, apis := new(model.API).GetAllAPIs()

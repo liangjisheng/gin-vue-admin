@@ -38,7 +38,7 @@ type GetByID struct {
 // @Security ApiKeyAuth
 // @Produce  application/json
 // @Param data body api.RegistAndLoginStuct true "可以什么都不填"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"返回成功"}"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"返回成功"}"
 // @Router /menu/getMenu [post]
 func GetMenu(c *gin.Context) {
 	claims, _ := c.Get("claims")
@@ -57,8 +57,8 @@ func GetMenu(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body modelInterface.PageInfo true "分页获取基础menu列表"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body modelinterface.PageInfo true "分页获取基础menu列表"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/getMenuList [post]
 func GetMenuList(c *gin.Context) {
 	var pageInfo modelinterface.PageInfo
@@ -82,8 +82,8 @@ func GetMenuList(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body dbModel.BaseMenu true "新增菜单"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body model.BaseMenu true "新增菜单"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/addBaseMenu [post]
 func AddBaseMenu(c *gin.Context) {
 	var addMenu model.BaseMenu
@@ -102,7 +102,7 @@ func AddBaseMenu(c *gin.Context) {
 // @Security ApiKeyAuth
 // @Produce  application/json
 // @Param data body api.RegistAndLoginStuct true "可以什么都不填"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"返回成功"}"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"返回成功"}"
 // @Router /menu/getBaseMenuTree [post]
 func GetBaseMenuTree(c *gin.Context) {
 	err, menus := new(model.BaseMenu).GetBaseMenuTree()
@@ -120,7 +120,7 @@ func GetBaseMenuTree(c *gin.Context) {
 // @accept application/json
 // @Produce application/json
 // @Param data body api.AddMenuAuthorityInfo true "增加menu和角色关联关系"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/addMenuAuthority [post]
 func AddMenuAuthority(c *gin.Context) {
 	var addMenuAuthorityInfo AddMenuAuthorityInfo
@@ -139,8 +139,8 @@ func AddMenuAuthority(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body api.AuthorityIdInfo true "增加menu和角色关联关系"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body api.AuthorityIDInfo true "增加menu和角色关联关系"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/addMenuAuthority [post]
 func GetMenuAuthority(c *gin.Context) {
 	var authorityIDInfo AuthorityIDInfo
@@ -159,8 +159,8 @@ func GetMenuAuthority(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body api.IdInfo true "删除菜单"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body api.IDInfo true "删除菜单"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/deleteBaseMenu [post]
 func DeleteBaseMenu(c *gin.Context) {
 	var idInfo IDInfo
@@ -179,8 +179,8 @@ func DeleteBaseMenu(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body dbModel.BaseMenu true "更新菜单"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body model.BaseMenu true "更新菜单"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/updataBaseMen [post]
 func UpdataBaseMenu(c *gin.Context) {
 	var menu model.BaseMenu
@@ -199,8 +199,8 @@ func UpdataBaseMenu(c *gin.Context) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body api.GetById true "根据id获取菜单"
-// @Success 200 {string} json "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body api.GetByID true "根据id获取菜单"
+// @Success 200 {object} response "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/getBaseMenuById [post]
 func GetBaseMenuByID(c *gin.Context) {
 	var idInfo GetByID
